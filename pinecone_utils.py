@@ -27,7 +27,9 @@ def fill_index(embeddings,texts,api_key,doc_name = 'smart_bible',index_name ='sm
         {
             'id': f'{doc_name}-child_doc{n+1}',
             'values': e,
-            'metadata': {'text': t},
+            'metadata': {'passage': t['passage'],
+                         'book': t['book'],
+                         'chapter':t['chapter']},
          } for n,(e,t) in enumerate(zip(embeddings,texts))
     ]
     try:

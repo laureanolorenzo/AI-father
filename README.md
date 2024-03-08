@@ -1,13 +1,21 @@
 # SmartBible
 
-This project allows users to search relevant passages in the Bible based on input. Semantic search techniques make the search more precise, and I plan to improve text generation to support "smart chatting" with the documents. In this first draft, hugging face models are used for creating the embeddings, and ChromaDB stores them locally.
+This project allows users to search relevant passages in the Bible based on input. Semantic search techniques make the search more precise, and I plan to improve text generation to support "smart chatting" with the documents. In this first draft, hugging face models are used for creating the embeddings, and ChromaDB stores them locally. Please note that I am not responsible for the answers. They are automatically fetched by a semantic retrieval system.
 
 ---
-## Sample PDF and text
 
-I provided a sample pdf, but the full text can be found at: [The Book of Genesis](https://www.vatican.va/archive/bible/genesis/documents/bible_genesis_en.html#:~:text=The%20Book%20of%20Genesis&text=%5B1%3A1%5D%20In%20the,%22%3B%20and%20there%20was%20light.)
+### Getting Started
 
-## Getting Started
+## Check out the live Demo at [Smart Bible](https://sm-bible-remote.onrender.com/)
+
+--- 
+
+
+Commands below are currently not working!
+
+
+---
+
 <sup>Make sure you have Python installed</sup>
 ### 1. Clone the Repository:
 ```bash
@@ -32,6 +40,21 @@ python mainv1.py
 
 Main change: migration of vector database from local (chromaDB) to remote (Pinecone). 
 
+### Current Version
+
+#### Main changes: 
+
++ App is now live at [Smart Bible](https://sm-bible-remote.onrender.com/)
+
++ Added a GUI that can be used locally (access to Pinecone Index is needed, so it won't work yet)
+
++ A few minor changes to the RAG system itself
+
++ Added a JSON file which contains the chunks of text (original source: [Bible pdfs](https://github.com/christislord12/Bible-Pdfs/tree/main/pdfs))
+
 #### Currently working on:
  
- A small application to run the chatbot from a server. Maybe I'll deploy it later.
+ + Adapting local version via ChromaDB
+
+ + Looking for cheaper hosting alternatives to keep the app deployed
+
