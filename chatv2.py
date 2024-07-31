@@ -25,7 +25,7 @@ f.close()
 doc_name = 'sb_test' #####CHANGE LATER
 
 
-index_name='smart-bible'
+index_name='smart-bible-1715969587-index'
 pc_index = pinecone_index(pc_API_key,index_name)
 
 
@@ -94,7 +94,7 @@ n_results_extra = 1 #Not too important. Controls the number of "extra" chunks (l
 
 
 ### Threshold (important) ## Play around with this?
-metric_threshold = -2 # If in any given interaction no chunk  reaches this degree of similarity to the question, then
+metric_threshold = -4 # If in any given interaction no chunk  reaches this degree of similarity to the question, then
 # the API call is canceled and an automatic response is sent instead (serves as a filter). If you wish to always
 # call the API, then set it to 0
 
@@ -109,13 +109,7 @@ def filter_stopwords(stop_words, chunk,lang = 'english'):
     return ' '.join(filtered_words)
 
 
-
-
-
 #####Token consumption#####
-
-
-
 
 ### Functions ###
 ### This section is meant to help keep the main loop short and simple, but I need to redesign the whole code to achieve that.
@@ -283,6 +277,7 @@ else:
 #### Main function to export
 def get_relevant_docs(text,completions = False):
     query_results = semantic_search(text,pc_index,re_rank= True,threshold = metric_threshold,top_n=3,doc_name='sb_test')
+    # print(query_results)
     if not len(query_results):
         return False
     if not completions:
