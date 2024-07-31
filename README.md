@@ -44,7 +44,7 @@ Main change: migration of vector database from local (chromaDB) to remote (Pinec
 
 #### Main changes: 
 
-+ App is now live at [Smart Bible](https://sm-bible-remote.onrender.com/)
++ App is not currently live
 
 + Added a GUI that can be used locally (access to Pinecone Index is needed, so it won't work yet)
 
